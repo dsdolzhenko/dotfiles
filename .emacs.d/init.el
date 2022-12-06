@@ -191,6 +191,13 @@
   :hook ((emacs-lisp-mode .  rainbow-delimiters-mode)))
 
 ;;
+;; Productivity
+;;
+
+(use-package which-key
+  :config (which-key-mode))
+
+;;
 ;; Org
 ;;
 (require 'org)
