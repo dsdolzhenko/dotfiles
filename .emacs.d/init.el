@@ -63,10 +63,11 @@
 ;; UI
 ;;
 
-;; Hide tool, scroll bars and tooltips
+;; Hide unused UI elements
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (tooltip-mode -1)
+(fringe-mode -1)
 
 ;; Hide frame title and frame icon
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
