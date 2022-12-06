@@ -65,6 +65,43 @@
 (global-set-key (kbd "C-x k") 'x/kill-this-buffer)
 
 ;;
+;; Packages
+;;
+(require 'package)
+
+(setq package-native-compile t)
+
+;; Define package repositories
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+
+;; Load and activate emacs packages
+(package-initialize)
+
+;; Download the ELPA archive description if needed
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;; Ensure that use-package is installed
+(unless (package-installed-p 'use-package)
+  (message "Install use-package.el")
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; See the doc https://jwiegley.github.io/use-package/keywords/
+(require 'use-package)
+
+;; Ensure that all other packages are installed
+(setq use-package-always-ensure t)
+
+;; ... and updated
+(use-package auto-package-update
+  :config (setq auto-package-update-delete-old-versions t
+                auto-package-update-interval 7
+                auto-package-update-hide-results t)
+  :init (auto-package-update-maybe))
+
+;;
 ;; UI
 ;;
 
