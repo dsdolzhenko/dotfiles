@@ -171,3 +171,8 @@
       kept-new-versions 6   ;; Number of newest versions to keep.
       kept-old-versions 2   ;; Number of oldest versions to keep.
       version-control t)    ;; Use version numbers for backups.
+
+;; Translate input sequences into English
+(use-package reverse-im
+  :custom (reverse-im-input-methods '("russian-computer"))
+  :config (reverse-im-mode t))
