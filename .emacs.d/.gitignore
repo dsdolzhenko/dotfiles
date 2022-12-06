@@ -1,5 +1,6 @@
 .emacs.desktop
 .emacs.desktop.lock
+.last-package-update-day
 auto-save-list
 backup
 bookmarks
