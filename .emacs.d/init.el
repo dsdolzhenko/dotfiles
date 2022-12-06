@@ -183,6 +183,13 @@
 
 (use-package magit)
 
+(use-package paredit
+  :hook ((emacs-lisp-mode . paredit-mode)
+         (eval-expression-minibuffer-setup . paredit-mode)))
+
+(use-package rainbow-delimiters
+  :hook ((emacs-lisp-mode .  rainbow-delimiters-mode)))
+
 ;;
 ;; Org
 ;;
