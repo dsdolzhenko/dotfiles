@@ -57,6 +57,12 @@
 (minibuffer-electric-default-mode t)
 (setq minibuffer-eldef-shorten-default t)
 
+;; Shortcut to kill the current buffer.
+;; Unlike the default, kills the buffer *without confirmation* if it is not modified.
+(defun x/kill-this-buffer ()
+  (interactive) (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-x k") 'x/kill-this-buffer)
+
 ;;
 ;; UI
 ;;
