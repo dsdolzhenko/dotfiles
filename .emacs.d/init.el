@@ -42,15 +42,13 @@
 (add-to-list 'completion-styles 'substring)
 (icomplete-vertical-mode t)
 
+;; Allow typing spaces and question marks in the completion minibuffer
 (define-key minibuffer-local-completion-map
             " " 'self-insert-command)
-
 (define-key minibuffer-local-must-match-map
             " " 'self-insert-command)
-
 (define-key minibuffer-local-completion-map
             "?" 'self-insert-command)
-
 (define-key minibuffer-local-must-match-map
             "?" 'self-insert-command)
 
