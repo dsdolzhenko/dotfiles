@@ -1,0 +1,15 @@
+.emacs.desktop
+.emacs.desktop.lock
+auto-save-list
+backup
+bookmarks
+custom.el
+eln-cache
+elpa
+eshell
+projectile-bookmarks.eld
+projectile.cache
+projects
+recentf
+transient
+*~
