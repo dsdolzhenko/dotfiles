@@ -34,6 +34,7 @@
 
 ;; Native-Compilation
 (setq native-comp-async-query-on-exit t)
+(setq native-comp-async-report-warnings-errors 'silent)
 
 ;; Turn off alarms
 (setq ring-bell-function 'ignore)
