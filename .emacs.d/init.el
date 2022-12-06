@@ -176,3 +176,9 @@
 (use-package reverse-im
   :custom (reverse-im-input-methods '("russian-computer"))
   :config (reverse-im-mode t))
+
+;;
+;; Development
+;;
+
+(use-package magit)
