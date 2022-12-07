@@ -139,6 +139,9 @@
 (set-face-attribute 'variable-pitch nil :font "Fira Code 16")
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
+(use-package solarized-theme
+  :init (load-theme 'solarized-light t))
+
 ;;
 ;; Editing
 ;;
