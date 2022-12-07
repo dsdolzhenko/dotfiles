@@ -140,6 +140,13 @@
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
 (use-package solarized-theme
+  :custom
+  ;; Avoid all font-size changes
+  (solarized-height-minus-1 1.0)
+  (solarized-height-plus-1 1.0)
+  (solarized-height-plus-2 1.0)
+  (solarized-height-plus-3 1.0)
+  (solarized-height-plus-4 1.0)
   :init (load-theme 'solarized-light t))
 
 ;;
