@@ -147,6 +147,18 @@
   (solarized-height-plus-2 1.0)
   (solarized-height-plus-3 1.0)
   (solarized-height-plus-4 1.0)
+  (solarized-use-variable-pitch nil)
+  (solarized-scale-org-headlines nil)
+
+  ;; Disable unnecessary coloring
+  (solarized-emphasize-indicators nil)
+
+  ;; Fix rendering of underlines in modeline
+  (x-underline-at-descent-line t)
+
+  ;; Highlight modeline of the current buffer
+  (solarized-high-contrast-mode-line t)
+
   :init (load-theme 'solarized-light t))
 
 ;;
