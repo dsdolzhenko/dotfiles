@@ -225,6 +225,11 @@
 (require 'org)
 (require 'org-mac-link)
 
+(use-package org-bullets
+  :custom
+  (org-bullets-bullet-list '("▸"))
+  :hook ((org-mode . org-bullets-mode)))
+
 (setq org-directory "~/Documents/org")
 
 (setq org-hide-emphasis-markers t)
