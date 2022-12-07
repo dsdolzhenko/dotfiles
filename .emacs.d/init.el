@@ -266,9 +266,9 @@
 (setq org-log-done 'time)
 
 (defun x/org-capture-inbox ()
-     (interactive)
-     (call-interactively 'org-store-link)
-     (org-capture nil "i"))
+  (interactive)
+  (call-interactively 'org-store-link)
+  (org-capture nil "i"))
 
 (defun x/org-save-agenda-buffers ()
   "Save `org-agenda-files' buffers without user confirmation."
