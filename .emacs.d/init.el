@@ -213,8 +213,9 @@
                                  (search . " %i %-12:c")))
 (setq org-agenda-window-setup 'only-window)
 
+
 (setq org-refile-targets
-      '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
+      '(("projects.org" :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
 
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
