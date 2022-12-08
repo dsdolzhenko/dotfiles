@@ -126,7 +126,7 @@
 (blink-cursor-mode -1)
 
 ;; Narrow cursor
-(set-default 'cursor-type  '(bar . 2))
+(set-default 'cursor-type '(bar . 2))
 
 ;; Show whitespaces
 (require 'whitespace)
@@ -245,7 +245,6 @@
                                  (tags   . " %i %-15:c")
                                  (search . " %i %-15:c")))
 (setq org-agenda-window-setup 'only-window)
-
 
 (setq org-refile-targets
       '(("projects.org" :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
