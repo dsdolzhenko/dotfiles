@@ -161,6 +161,10 @@
 
   :init (load-theme 'solarized-light t))
 
+(setq window-divider-default-bottom-width 2
+      window-divider-default-places 'bottom-only
+      window-divider-mode t)
+
 ;;
 ;; Editing
 ;;
