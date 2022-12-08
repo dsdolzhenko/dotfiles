@@ -274,9 +274,10 @@
   "Save `org-agenda-files' buffers without user confirmation."
   (interactive)
   (message "Saving org-agenda-files buffers...")
-  (save-some-buffers t (lambda ()
-                         (when (member (buffer-file-name) org-agenda-files)
-                           t)))
+  (let ((org-agenda-files (org-agenda-files)))
+    (save-some-buffers t (lambda ()
+                           (when (member (buffer-file-name) org-agenda-files)
+                             t))))
   (message "Saving org-agenda-files buffers... done"))
 
 (defun x/org-log-next-creation-date (&rest ignore)
