@@ -82,12 +82,6 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; Ensure that use-package is installed
-(unless (package-installed-p 'use-package)
-  (message "Install use-package.el")
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;; See the doc https://jwiegley.github.io/use-package/keywords/
 (require 'use-package)
 
