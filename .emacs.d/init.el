@@ -106,11 +106,10 @@
 (fringe-mode -1)
 
 ;; Hide frame title and frame icon
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
-
 (setq frame-title-format nil)
 (setq ns-use-proxy-icon nil)
+
+;; Do not round frame size to char size (frame-char-height and frame-char-width)
 (setq frame-resize-pixelwise t)
 
 ;; Highlight current line
