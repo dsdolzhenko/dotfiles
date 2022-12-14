@@ -280,10 +280,27 @@
                              t))))
   (message "Saving org-agenda-files buffers... done"))
 
+(defun x/org-remove-emphasis ()
+  (interactive)
+  (save-match-data
+    (if (and (org-in-regexp org-emph-re 2)
+             (not (region-active-p)))
+        (let ((beg (match-beginning 3))
+              (end (match-end 4)))
+          (when (and (>= (point) (1- beg))
+                     (<= (point) (1+ end)))
+            (save-excursion
+              (goto-char end)
+              (delete-char 1)
+              (goto-char beg)
+              (delete-char 1)))))))
+
 (define-key global-map (kbd "C-c i") 'x/org-capture-inbox)
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c g") 'org-mac-link-get-link)
+
+(define-key org-mode-map (kbd "M-r") 'x/org-remove-emphasis)
 
 ;; Use the full window instead of splitting the current one
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
