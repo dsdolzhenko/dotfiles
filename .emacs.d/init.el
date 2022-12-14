@@ -276,12 +276,6 @@
                              t))))
   (message "Saving org-agenda-files buffers... done"))
 
-(defun x/org-log-next-creation-date (&rest ignore)
-  "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
-  (when (and (string= (org-get-todo-state) "NEXT")
-             (not (org-entry-get nil "ACTIVATED")))
-    (org-entry-put nil "ACTIVATED" (format-time-string "[%Y-%m-%d]"))))
-
 (define-key global-map (kbd "C-c i") 'x/org-capture-inbox)
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -289,8 +283,6 @@
 
 ;; Use the full window instead of splitting the current one
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
-
-(add-hook 'org-after-todo-state-change-hook #'x/org-log-next-creation-date)
 
 ;; Add it after refile
 (advice-add 'org-refile :after
