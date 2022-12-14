@@ -247,7 +247,10 @@
 
 (setq org-capture-templates
       `(("i" "Inbox" entry (file "inbox.org")
-         ,"* TODO %?")
+         ,(concat "* TODO %?\n"
+                  ":PROPERTIES:\n"
+                  ":ENTERED: %U\n"
+                  ":END:\n"))
         ("m" "Meeting" entry (file+headline "agenda.org" "*Future*")
          ,(concat "* %? :meeting:\n"
                   "<%<%Y-%m-%d %a %H:00>>"))
