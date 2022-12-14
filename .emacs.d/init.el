@@ -247,19 +247,23 @@
 
 (setq org-capture-templates
       `(("i" "Inbox" entry (file "inbox.org")
-         ,(concat "* TODO %?\n"
-                  "/Entered on/ %U"))
+         ,"* TODO %?")
         ("m" "Meeting" entry (file+headline "agenda.org" "*Future*")
          ,(concat "* %? :meeting:\n"
                   "<%<%Y-%m-%d %a %H:00>>"))
-        ("n" "Note" entry (file "notes.org")
-         ,(concat "* Note (%a)\n"
-                  "/Entered on/ %U\n" "\n" "%?"))))
+        ("n" "Meeting Notes" entry (file "notes.org")
+         ,"* Meeting Notes (%a)")))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)")))
+      '((sequence "TODO(t!)" "STARTED(s!)" "HOLD(h!)" "|" "DONE(d!)" "CANCELED(c!)")))
 
-(setq org-log-done 'time)
+;; Log TODO state changes into LOGBOOK drawer
+(setq org-log-into-drawer t)
+;; ... and log them in the rerersed order, newest last
+(setq org-log-states-order-reversed t)
+
+;; Use unique ID in the org links
+(setq org-id-link-to-org-use-id t)
 
 (defun x/org-capture-inbox ()
   (interactive)
