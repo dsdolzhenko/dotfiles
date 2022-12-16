@@ -260,6 +260,8 @@
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "STARTED(s!)" "HOLD(h!)" "|" "DONE(d!)" "CANCELED(c!)")))
 
+;; Log date and time when TODO is marked as DONE or CANCELED
+(setq org-log-done 'time)
 ;; Log TODO state changes into LOGBOOK drawer
 (setq org-log-into-drawer t)
 ;; ... and log them in the rerersed order, newest last
