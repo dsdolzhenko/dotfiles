@@ -209,6 +209,15 @@
 (use-package rainbow-delimiters
   :hook ((emacs-lisp-mode .  rainbow-delimiters-mode)))
 
+(require 'eglot)
+;; Otherwise my eyes are bleeding
+(set-face-attribute 'eglot-mode-line nil
+                    :weight 'normal
+                    :inherit '())
+
+(use-package rust-mode
+  :hook ((rust-mode . eglot-ensure)))
+
 ;;
 ;; Productivity
 ;;
