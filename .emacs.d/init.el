@@ -233,8 +233,8 @@
 
 (setq org-agenda-files (list "inbox.org" "agenda.org" "projects.org"))
 (setq org-agenda-hide-tags-regexp ".")
-(setq org-agenda-prefix-format '((agenda . " %i %?-15t% s")
-                                 (todo   . " %i %-15:c %-4e ")
+(setq org-agenda-prefix-format '((agenda . " %i %-15t%-15c")
+                                 (todo   . " %i %-15:c %-4e")
                                  (tags   . " %i %-15:c")
                                  (search . " %i %-15:c")))
 (setq org-agenda-window-setup 'only-window)
