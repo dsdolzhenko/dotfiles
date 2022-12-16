@@ -312,3 +312,8 @@
 (advice-add 'org-refile :after
             (lambda (&rest _)
               (x/org-save-agenda-buffers)))
+
+;; Save the buffer after progress indicator(s) update
+(advice-add 'org-update-statistics-cookies :after
+            (lambda (&rest _)
+              (save-buffer)))
