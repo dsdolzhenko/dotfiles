@@ -248,6 +248,9 @@
                                  (search . " %i %-15:c")))
 (setq org-agenda-window-setup 'only-window)
 
+(setq org-stuck-projects '("project" nil ("next") nil))
+(setq org-tags-exclude-from-inheritance '("project"))
+
 (setq org-refile-targets
       '(("projects.org" :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
 
