@@ -14,7 +14,7 @@
 (server-start)
 
 ;; Contrib
-(add-to-list 'load-path "~/.emacs.d/contrib/")
+(add-to-list 'load-path (concat user-emacs-directory "contrib"))
 
 ;; Custom set variables
 (setq custom-file (concat user-emacs-directory "custom.el"))
