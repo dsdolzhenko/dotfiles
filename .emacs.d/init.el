@@ -256,7 +256,8 @@
 (setq org-tags-exclude-from-inheritance '("project"))
 
 (setq org-refile-targets
-      '(("projects.org" :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
+      '((("projects.org" "incubator.org")
+         :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
 
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
