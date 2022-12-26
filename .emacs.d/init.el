@@ -251,6 +251,8 @@
 (setq org-agenda-window-setup 'only-window)
 
 (setq org-stuck-projects '("project" nil ("next") nil))
+
+(setq org-tags-column 0)
 (setq org-tags-exclude-from-inheritance '("project"))
 
 (setq org-refile-targets
