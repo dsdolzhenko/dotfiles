@@ -322,6 +322,8 @@
 ;; Use the full window instead of splitting the current one
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
 
+(add-hook 'org-mode-hook 'visual-line-mode)
+
 ;; Add it after refile
 (advice-add 'org-refile :after
             (lambda (&rest _)
