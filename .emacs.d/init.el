@@ -236,6 +236,8 @@
   (org-bullets-bullet-list '("▸"))
   :hook ((org-mode . org-bullets-mode)))
 
+(use-package visual-fill-column)
+
 (setq org-directory "~/Documents/org")
 
 (setq org-hide-emphasis-markers t)
@@ -322,7 +324,12 @@
 ;; Use the full window instead of splitting the current one
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
 
-(add-hook 'org-mode-hook 'visual-line-mode)
+;; Word-wrap paragraphs in org mode buffers
+(add-hook 'org-mode-hook (lambda (&rest _)
+                           (setq fill-column 110)
+                           (visual-line-mode)
+                           (visual-fill-column-mode)
+                           (display-fill-column-indicator-mode)))
 
 ;; Add it after refile
 (advice-add 'org-refile :after
