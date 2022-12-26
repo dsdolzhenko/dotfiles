@@ -263,7 +263,7 @@
 
 (setq org-capture-templates
       `(("i" "Inbox" entry (file "inbox.org")
-         ,(concat "* TODO %?\n"
+         ,(concat "* %?\n"
                   ":PROPERTIES:\n"
                   ":ENTERED: %U\n"
                   ":END:\n"))
