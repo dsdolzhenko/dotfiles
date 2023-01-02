@@ -285,7 +285,7 @@
 (setq org-log-states-order-reversed t)
 
 ;; Use unique ID in the org links
-(setq org-id-link-to-org-use-id t)
+(setq org-id-link-to-org-use-id 'use-existing)
 
 (defun x/org-capture-inbox ()
   (interactive)
