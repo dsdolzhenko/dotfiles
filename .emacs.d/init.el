@@ -171,6 +171,9 @@
 ;; Delete trailing whitespaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Make kill-visual-line kill the whole line
+(defalias 'kill-visual-line 'kill-line)
+
 ;; Require final newline
 (setq require-final-newline t)
 
