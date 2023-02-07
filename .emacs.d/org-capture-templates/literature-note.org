@@ -1,0 +1,8 @@
+
+* Source
+Title: ${title}
+Author: %^{Author}
+URL: %^{URL}
+
+* Notes
+%?
