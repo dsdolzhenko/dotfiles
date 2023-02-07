@@ -9,6 +9,7 @@ custom.el
 eln-cache
 elpa
 eshell
+org-roam.db
 projectile-bookmarks.eld
 projectile.cache
 projects
