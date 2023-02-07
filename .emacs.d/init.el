@@ -205,6 +205,11 @@
 
 (use-package magit)
 
+(use-package treemacs
+  :defer t
+  :config (setq treemacs-no-png-images t)
+  :custom-face (treemacs-root-face ((t (:inherit font-lock-constant-face)))))
+
 (use-package paredit
   :hook ((emacs-lisp-mode . paredit-mode)
          (eval-expression-minibuffer-setup . paredit-mode)))
