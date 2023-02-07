@@ -124,7 +124,7 @@
 ;; Show whitespaces
 (require 'whitespace)
 (setq whitespace-style '(face spaces space-mark tabs tab-mark))
-(set-face-attribute 'whitespace-space nil :background nil :foreground "#606060")
+(set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#606060")
 (add-hook 'emacs-lisp-mode-hook #'whitespace-mode)
 
 ;; Default font face
