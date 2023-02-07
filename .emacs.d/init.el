@@ -270,7 +270,7 @@
 
 (setq org-refile-targets
       '((("projects.org" "incubator.org")
-         :regexp . "\\(?:\\(?:Note\\|\\(?:One-off t\\|T\\)ask\\)s\\)")))
+         :maxlevel . 3)))
 
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
