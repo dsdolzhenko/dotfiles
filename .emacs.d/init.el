@@ -356,3 +356,72 @@
 (advice-add 'org-update-statistics-cookies :after
             (lambda (&rest _)
               (save-buffer)))
+
+;;
+;; org-roam
+;;
+(use-package f)
+(use-package emacsql-sqlite-builtin)
+
+(use-package org-roam
+  :after f org
+
+  :init
+  (setq org-roam-v2-ack t)
+  (setq org-roam-database-connector 'sqlite-builtin)
+
+  :custom
+  (org-roam-directory org-directory)
+  (org-roam-node-display-template "${hierarchy:*} ${tags:10}")
+  (org-roam-capture-templates `(("d" "Default" plain
+                                 "%?"
+                                 :if-new (file+head "notes/%<%Y%m%d%H%M%S>.org" "#+TITLE: ${title}\n")
+                                 :unnarrowed t)
+                                ("p" "Project" plain
+                                 (file ,(concat user-emacs-directory "org-capture-templates/project.org"))
+                                 :if-new (file+head "projects/%<%Y%m%d%H%M%S>.org" "#+TITLE: ${title}\n")
+                                 :unnarrowed t)
+                                ("c" "Person" plain
+                                 (file ,(concat user-emacs-directory "org-capture-templates/person.org"))
+                                 :if-new (file+head "people/${slug}.org" "#+TITLE: ${title}\n")
+                                 :unnarrowed t)))
+  (org-roam-dailies-directory ".")
+  (org-roam-dailies-capture-templates '(("d" "default" entry
+                                         "* %?"
+                                         :target (file+datetree "journal.org" day))))
+
+  :bind
+  (("C-c n l" . org-roam-buffer-toggle)
+   ("C-c n f" . org-roam-node-find)
+   ("C-c n i" . org-roam-node-insert))
+
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
+
+  :config
+  (require 'org-roam-dailies)
+  (require 'f)
+
+  (cl-defmethod org-roam-node-filetitle ((node org-roam-node))
+    "Return the file TITLE for the node."
+    (org-roam-get-keyword "TITLE" (org-roam-node-file node)))
+
+  (cl-defmethod org-roam-node-hierarchy ((node org-roam-node))
+    "Return the hierarchy for the node."
+    (let ((title (org-roam-node-title node))
+          (olp (org-roam-node-olp node))
+          (level (org-roam-node-level node))
+          (directories (org-roam-node-directories node))
+          (filetitle (org-roam-node-filetitle node)))
+      (concat
+       (if directories (format "(%s) " directories))
+       (if (> level 0) (concat filetitle " > "))
+       (if (> level 1) (concat (string-join olp " > ") " > "))
+       title)))
+
+  (cl-defmethod org-roam-node-directories ((node org-roam-node))
+    (if-let ((dirs (file-name-directory (file-relative-name (org-roam-node-file node) org-roam-directory))))
+        (string-join (f-split dirs) "/")
+      nil))
+
+  (org-roam-db-autosync-mode))
