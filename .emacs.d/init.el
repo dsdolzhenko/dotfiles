@@ -384,6 +384,10 @@
                                 ("c" "Person" plain
                                  (file ,(concat user-emacs-directory "org-capture-templates/person.org"))
                                  :if-new (file+head "people/${slug}.org" "#+TITLE: ${title}\n")
+                                 :unnarrowed t)
+                                ("r" "Reference" plain
+                                 "%?"
+                                 :if-new (file+head "refs/${slug}.org" "#+TITLE: ${title}\n")
                                  :unnarrowed t)))
   (org-roam-dailies-directory ".")
   (org-roam-dailies-capture-templates '(("d" "default" entry
