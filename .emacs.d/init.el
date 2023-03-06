@@ -357,6 +357,10 @@
             (lambda (&rest _)
               (save-buffer)))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((sql . t)))
+
 ;;
 ;; org-roam
 ;;
