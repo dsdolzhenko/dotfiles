@@ -152,7 +152,7 @@
   ;; Highlight modeline of the current buffer
   (solarized-high-contrast-mode-line t)
 
-  :init (load-theme 'solarized-light t))
+  :init (load-theme 'solarized-light-high-contrast t))
 
 (setq window-divider-default-bottom-width 2
       window-divider-default-places 'bottom-only
