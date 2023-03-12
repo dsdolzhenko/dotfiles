@@ -11,6 +11,9 @@
 ;; Core
 ;;
 
+(setq user-full-name "Dmitry Dolzhenko"
+      user-mail-address "mailbox@dolzhenko.me")
+
 (server-start)
 
 ;; Contrib
