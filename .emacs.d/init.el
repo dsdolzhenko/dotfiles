@@ -280,12 +280,7 @@
          ,(concat "* %?\n"
                   ":PROPERTIES:\n"
                   ":ENTERED: %U\n"
-                  ":END:\n"))
-        ("m" "Meeting" entry (file+headline "agenda.org" "*Future*")
-         ,(concat "* %? :meeting:\n"
-                  "<%<%Y-%m-%d %a %H:00>>"))
-        ("n" "Meeting Notes" entry (file "notes.org")
-         ,"* Meeting Notes (%a)")))
+                  ":END:\n"))))
 
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "STARTED(s!)" "HOLD(h!)" "|" "DONE(d!)" "CANCELED(c!)")))
