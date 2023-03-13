@@ -258,7 +258,7 @@
 
 (setq org-hide-emphasis-markers t)
 
-(setq org-agenda-files (list "inbox.org" "agenda.org" "projects.org"))
+(setq org-agenda-files (list "inbox.org" "projects.org"))
 (setq org-agenda-hide-tags-regexp ".")
 (setq org-agenda-prefix-format '((agenda . " %i %-15t%-15c")
                                  (todo   . " %i %-15:c %-4e")
