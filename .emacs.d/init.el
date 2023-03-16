@@ -226,8 +226,17 @@
                     :weight 'normal
                     :inherit '())
 
+(use-package typescript-mode)
+
 (use-package rust-mode
   :hook ((rust-mode . eglot-ensure)))
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+
 
 ;;
 ;; Productivity
