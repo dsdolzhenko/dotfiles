@@ -67,6 +67,9 @@
   (interactive) (kill-buffer (current-buffer)))
 (global-set-key (kbd "C-x k") 'x/kill-this-buffer)
 
+;; Use shift-{left,right,up,down} to move between windows
+(windmove-default-keybindings)
+
 ;;
 ;; Packages
 ;;
