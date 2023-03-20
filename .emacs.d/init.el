@@ -193,7 +193,13 @@
 
 (use-package treemacs
   :defer t
-  :config (setq treemacs-no-png-images t)
+  :custom
+  (treemacs-no-png-images t)
+  (treemacs-peek-mode t)
+  (treemacs-follow-mode t)
+  (treemacs-project-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-display-current-project-exclusively t)
   :custom-face (treemacs-root-face ((t :underline nil :height (lambda (_) (face-attribute 'default :height))))))
 
 (use-package paredit
@@ -219,8 +225,6 @@
   :config
   (editorconfig-mode 1))
 
-
-
 ;;
 ;; Productivity
 ;;
@@ -232,6 +236,10 @@
   :config (projectile-mode)
   :bind-keymap
   ("C-c p" . projectile-command-map))
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
 
 ;;
 ;; Org
