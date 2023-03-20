@@ -137,7 +137,7 @@
 (set-face-attribute 'variable-pitch nil :font "Fira Code 16")
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
-(load-theme 'modus-operandi)
+(load-theme 'modus-operandi t)
 (set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#C0C0C0")
 
 (setq window-divider-default-bottom-width 2
