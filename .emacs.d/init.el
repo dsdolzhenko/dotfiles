@@ -130,7 +130,6 @@
 ;; Show whitespaces
 (require 'whitespace)
 (setq whitespace-style '(face spaces space-mark tabs tab-mark))
-(set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#606060")
 (add-hook 'emacs-lisp-mode-hook #'whitespace-mode)
 
 ;; Default font face
@@ -138,27 +137,8 @@
 (set-face-attribute 'variable-pitch nil :font "Fira Code 16")
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
-(use-package solarized-theme
-  :custom
-  ;; Avoid all font-size changes
-  (solarized-height-minus-1 1.0)
-  (solarized-height-plus-1 1.0)
-  (solarized-height-plus-2 1.0)
-  (solarized-height-plus-3 1.0)
-  (solarized-height-plus-4 1.0)
-  (solarized-use-variable-pitch nil)
-  (solarized-scale-org-headlines nil)
-
-  ;; Disable unnecessary coloring
-  (solarized-emphasize-indicators nil)
-
-  ;; Fix rendering of underlines in modeline
-  (x-underline-at-descent-line t)
-
-  ;; Highlight modeline of the current buffer
-  (solarized-high-contrast-mode-line t)
-
-  :init (load-theme 'solarized-light-high-contrast t))
+(load-theme 'modus-operandi)
+(set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#C0C0C0")
 
 (setq window-divider-default-bottom-width 2
       window-divider-default-places 'bottom-only
