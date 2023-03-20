@@ -214,7 +214,7 @@
 (use-package treemacs
   :defer t
   :config (setq treemacs-no-png-images t)
-  :custom-face (treemacs-root-face ((t (:inherit font-lock-constant-face)))))
+  :custom-face (treemacs-root-face ((t :underline nil :height (lambda (_) (face-attribute 'default :height))))))
 
 (use-package paredit
   :hook ((emacs-lisp-mode . paredit-mode)
