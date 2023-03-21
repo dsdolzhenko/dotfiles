@@ -189,6 +189,13 @@
   :config (reverse-im-mode t))
 
 ;;
+;; Dired
+;;
+
+;; MacOS built-in ls command doesn't support "--dired" option
+(setq dired-use-ls-dired nil)
+
+;;
 ;; Development
 ;;
 
