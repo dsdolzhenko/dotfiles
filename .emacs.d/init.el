@@ -347,8 +347,7 @@
 (add-hook 'org-mode-hook (lambda (&rest _)
                            (setq fill-column 110)
                            (visual-line-mode)
-                           (visual-fill-column-mode)
-                           (display-fill-column-indicator-mode)))
+                           (visual-fill-column-mode)))
 
 ;; Add it after refile
 (advice-add 'org-refile :after
