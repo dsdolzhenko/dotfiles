@@ -380,7 +380,7 @@
 (use-package emacsql-sqlite-builtin)
 
 (use-package org-roam
-  :after f org
+  :after (:all f org emacsql-sqlite-builtin)
 
   :init
   (setq org-roam-v2-ack t)
