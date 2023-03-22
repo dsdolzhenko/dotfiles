@@ -115,6 +115,14 @@
 (setq frame-title-format nil)
 (setq ns-use-proxy-icon nil)
 
+;; Make the title bar transparent on macos
+(when (memq window-system '(mac ns))
+  (add-to-list 'default-frame-alist '(ns-appearance . nil)) ; nil for dark text
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
+
+;; Make window fringes bigger
+(fringe-mode 10)
+
 ;; Do not round frame size to char size (frame-char-height and frame-char-width)
 (setq frame-resize-pixelwise t)
 
@@ -138,10 +146,14 @@
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
 (use-package modus-themes
-  :ensure t
   :config
   (load-theme 'modus-operandi t)
-  (set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#C0C0C0"))
+
+  ;; Reset some faces defined by modus theme
+  (set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "#C0C0C0")
+  (set-face-attribute 'fringe nil
+                      :foreground (face-foreground 'default)
+                      :background (face-background 'default)))
 
 (setq window-divider-default-bottom-width 2
       window-divider-default-places 'bottom-only
