@@ -243,7 +243,6 @@
   :hook ((rust-mode . eglot-ensure)))
 
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode 1))
 
@@ -260,8 +259,7 @@
   ("C-c p" . projectile-command-map))
 
 (use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
+  :after (treemacs projectile))
 
 ;;
 ;; Org
