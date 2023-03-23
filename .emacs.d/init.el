@@ -138,7 +138,7 @@
 ;; Show whitespaces
 (require 'whitespace)
 (setq whitespace-style '(face spaces space-mark tabs tab-mark))
-(add-hook 'emacs-lisp-mode-hook #'whitespace-mode)
+(add-hook 'prog-mode-hook #'whitespace-mode)
 
 ;; Default font face
 (set-face-attribute 'default nil :font "Fira Code 16")
