@@ -146,6 +146,12 @@
 (set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
 
 (use-package modus-themes
+  :custom
+  ;; Highlight active mode line
+  (modus-themes-common-palette-overrides
+   '((bg-mode-line-active bg-blue-subtle)
+     (fg-mode-line-active fg-main)
+     (border-mode-line-active blue-intense)))
   :config
   (load-theme 'modus-operandi t)
 
