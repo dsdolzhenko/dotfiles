@@ -1,2 +1,8 @@
+#+STARTUP: overview indent
+#+FILETAG: %^{tag|project}
+#+TITLE: ${title}
+
+%?
+
 * Notes
 * Resources

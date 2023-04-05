@@ -412,11 +412,11 @@
                                  :unnarrowed t)
                                 ("p" "Project" plain
                                  (file ,(concat user-emacs-directory "org-capture-templates/project.org"))
-                                 :if-new (file+head "projects/%<%Y%m%d%H%M%S>.org" "#+TITLE: ${title}\n")
+                                 :target (file+head "projects/%<%Y%m%d%H%M%S>.org" "")
                                  :unnarrowed t)
                                 ("c" "Person" plain
                                  (file ,(concat user-emacs-directory "org-capture-templates/person.org"))
-                                 :if-new (file+head "people/${slug}.org" "#+TITLE: ${title}\n")
+                                 :if-new (file+head "people/${slug}.org" "")
                                  :unnarrowed t)
                                 ("r" "Reference" plain
                                  "%?"

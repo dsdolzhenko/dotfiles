@@ -1,1 +1,6 @@
+#+STARTUP: overview indent
+#+TITLE: ${title}
+
+%?
+
 * Notes
