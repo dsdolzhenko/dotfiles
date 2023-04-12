@@ -278,6 +278,16 @@
 (use-package treemacs-projectile
   :after (treemacs projectile))
 
+(defun x/new-scratch-buffer ()
+  "Create a new scratch buffer."
+  (interactive)
+  (let ((buffer (generate-new-buffer "*scratch*")))
+    (let ((major-mode initial-major-mode))
+      (set-buffer-major-mode buffer)
+      (display-buffer buffer '(display-buffer-same-window . nil)))))
+
+(global-set-key (kbd "C-c n") #'x/new-scratch-buffer)
+
 ;;
 ;; Org
 ;;
