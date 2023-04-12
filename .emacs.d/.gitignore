@@ -11,6 +11,7 @@ eln-cache
 elpa
 eshell
 org-roam.db
+org-persist
 projectile-bookmarks.eld
 projectile.cache
 projects
