@@ -7,6 +7,9 @@ echo "Installing Fira Code fonts..."
 NONINTERACTIVE=1 brew tap --quiet homebrew/cask-fonts && \
     brew install --quiet --cask font-fira-code
 
+echo "Installing cmake..."
+brew install --quiet cmake # required by vterm package to compile its native part
+
 if ! alias ec >/dev/null 2>&1 ; then
     echo "Setup aliases for emacs..."
     cat <<EOF >> "${HOME}/.zshenv"
