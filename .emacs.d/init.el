@@ -286,7 +286,7 @@
       (set-buffer-major-mode buffer)
       (display-buffer buffer '(display-buffer-same-window . nil)))))
 
-(global-set-key (kbd "C-c n") #'x/new-scratch-buffer)
+(global-set-key (kbd "C-c s") #'x/new-scratch-buffer)
 
 ;;
 ;; Org
