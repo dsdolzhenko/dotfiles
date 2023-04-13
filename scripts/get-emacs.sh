@@ -19,6 +19,10 @@ mkdir -p deps && cd deps
 cp emacs-icons/Emacs.icns \
    emacs/nextstep/Cocoa/Emacs.base/Contents/Resources/Emacs.icns
 
+# libxml2
+LDFLAGS="-L/usr/local/opt/libxml2/lib"
+CPPFLAGS="-I/usr/local/opt/libxml2/include"
+
 cd emacs                                  && \
     git switch --quiet "${EMACS_BRANCH}"  && \
     git pull --quiet                      && \
@@ -31,4 +35,4 @@ cd emacs                                  && \
     make -j$(nproc)                       && \
     make install
 
-open deps/emacs/nextstep
+open nextstep
