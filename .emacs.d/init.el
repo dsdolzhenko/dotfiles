@@ -232,12 +232,12 @@ Otherwise, display it in another buffer."
 ;; vterm
 ;;
 (use-package vterm
-    :ensure t
-    :hook
-    ;; Disable current line highlighting mode. It is not properly supported by vterm and results in flickering.
-    ;; https://github.com/akermu/emacs-libvterm/issues/432
-    (vterm-mode . (lambda () (setq-local global-hl-line-mode nil)))
-    (vterm-copy-mode . (lambda () (call-interactively 'hl-line-mode))))
+  :ensure t
+  :hook
+  ;; Disable current line highlighting mode. It is not properly supported by vterm and results in flickering.
+  ;; https://github.com/akermu/emacs-libvterm/issues/432
+  (vterm-mode . (lambda () (setq-local global-hl-line-mode nil)))
+  (vterm-copy-mode . (lambda () (call-interactively 'hl-line-mode))))
 
 ;;
 ;; Development
