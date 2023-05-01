@@ -271,6 +271,9 @@ Otherwise, display it in another buffer."
 
 (use-package typescript-mode)
 
+;; https://jblevins.org/projects/markdown-mode/
+(use-package markdown-mode)
+
 (use-package rust-mode
   :hook ((rust-mode . eglot-ensure)))
 
