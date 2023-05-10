@@ -1,5 +1,6 @@
 #+STARTUP: overview indent
 #+FILETAG: %^{tag|project}
+#+CATEGORY: %^{category}
 #+TITLE: ${title}
 
 %?
