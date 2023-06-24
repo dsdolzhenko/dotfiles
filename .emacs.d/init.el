@@ -450,10 +450,12 @@ Otherwise, display it in another buffer."
                                  "%?"
                                  :if-new (file+head "refs/${slug}.org" "#+TITLE: ${title}\n")
                                  :unnarrowed t)))
-  (org-roam-dailies-directory ".")
+
+  (org-roam-dailies-directory "journal/")
   (org-roam-dailies-capture-templates '(("d" "default" entry
                                          "* %?"
-                                         :target (file+datetree "journal.org" day))))
+                                         :target (file+head "%<%Y-%m-%d>.org"
+                                                            "#+STARTUP: overview indent\n#+TITLE: %<%Y-%m-%d %A>\n"))))
 
   :bind
   (("C-c n l" . org-roam-buffer-toggle)
