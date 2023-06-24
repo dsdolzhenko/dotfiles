@@ -318,7 +318,7 @@ Otherwise, display it in another buffer."
 
 (setq org-hide-emphasis-markers t)
 
-(setq org-agenda-files (list "inbox.org" "projects.org"))
+(setq org-agenda-files (list "tasks.org"))
 (setq org-agenda-hide-tags-regexp ".")
 (setq org-agenda-prefix-format '((agenda . " %i %-15t%-15c")
                                  (todo   . " %i %-15:c %-4e")
@@ -332,7 +332,7 @@ Otherwise, display it in another buffer."
 (setq org-tags-exclude-from-inheritance '("project"))
 
 (setq org-refile-targets
-      '((("projects.org" "incubator.org")
+      '((("tasks.org")
          :maxlevel . 3)))
 
 (setq org-refile-use-outline-path 'file)
