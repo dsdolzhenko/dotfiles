@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-EMACS_BRANCH=emacs-29
+EMACS_BRANCH=master
 
 NONINTERACTIVE=1 brew install --quiet \
      automake autoconf      `# required by autotools build scripts (./autogen.sh and ./configure)` \
