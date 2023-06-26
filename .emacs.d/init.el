@@ -135,10 +135,13 @@
 ;; Narrow cursor
 (set-default 'cursor-type '(bar . 2))
 
+(use-package diminish)
+
 ;; Show whitespaces
 (require 'whitespace)
 (setq whitespace-style '(face spaces space-mark tabs tab-mark))
 (add-hook 'prog-mode-hook #'whitespace-mode)
+(diminish 'whitespace-mode)
 
 ;; Default font face
 (set-face-attribute 'default nil :font "JetBrains Mono 16")
@@ -206,6 +209,8 @@
   :custom (reverse-im-input-methods '("russian-computer"))
   :config (reverse-im-mode t))
 
+(diminish 'auto-revert-mode)
+
 ;;
 ;; Dired
 ;;
@@ -249,6 +254,7 @@
   :custom-face (treemacs-root-face ((t :underline nil :height (lambda (_) (face-attribute 'default :height))))))
 
 (use-package paredit
+  :diminish paredit-mode
   :hook ((emacs-lisp-mode . paredit-mode)
          (eval-expression-minibuffer-setup . paredit-mode)))
 
@@ -270,14 +276,17 @@
   :hook ((rust-mode . eglot-ensure)))
 
 (use-package editorconfig
-  :config
-  (editorconfig-mode 1))
+  :diminish editorconfig-mode
+  :config (editorconfig-mode 1))
+
+(diminish 'eldoc-mode)
 
 ;;
 ;; Productivity
 ;;
 
 (use-package which-key
+  :diminish which-key-mode
   :config (which-key-mode))
 
 (use-package projectile
