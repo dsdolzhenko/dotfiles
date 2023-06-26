@@ -141,9 +141,9 @@
 (add-hook 'prog-mode-hook #'whitespace-mode)
 
 ;; Default font face
-(set-face-attribute 'default nil :font "Fira Code 16")
-(set-face-attribute 'variable-pitch nil :font "Fira Code 16")
-(set-face-attribute 'fixed-pitch nil :font "Fira Code 16")
+(set-face-attribute 'default nil :font "JetBrains Mono 16")
+(set-face-attribute 'variable-pitch nil :font "JetBrains Mono 16")
+(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono 16")
 
 (use-package modus-themes
   :custom

@@ -3,9 +3,9 @@
 echo "Linking .emacs.d directory..."
 ln -sfh "${PWD}/.emacs.d" "${HOME}/.emacs.d"
 
-echo "Installing Fira Code fonts..."
+echo "Installing JetBrains Mono fonts..."
 NONINTERACTIVE=1 brew tap --quiet homebrew/cask-fonts && \
-    brew install --quiet --cask font-fira-code
+    brew install --quiet --cask font-jetbrains-mono
 
 echo "Installing cmake..."
 brew install --quiet cmake # required by vterm package to compile its native part
