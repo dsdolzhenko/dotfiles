@@ -315,6 +315,9 @@
 
 (use-package visual-fill-column)
 
+(diminish 'org-indent-mode)
+(diminish 'visual-line-mode)
+
 (setq org-directory "~/Documents/org")
 
 (setq org-hide-emphasis-markers t)
