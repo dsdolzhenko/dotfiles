@@ -214,19 +214,11 @@
 ;; MacOS built-in ls command doesn't support "--dired" option
 (setq dired-use-ls-dired nil)
 
-(defun x/dired-view-file-other-window ()
-  "In Dired, examine a file in view mode, returning to Dired when done.
-When file is a directory, show it in this buffer if it is inserted.
-Otherwise, display it in another buffer."
-  (interactive)
-  (let ((file (dired-get-file-for-visit)))
-    (if (file-directory-p file)
-        (or (and (cdr dired-subdir-alist)
-                 (dired-goto-subdir file))
-            (dired file))
-      (view-file-other-window file))))
-
-(define-key dired-mode-map (kbd "v") 'x/dired-view-file-other-window)
+(use-package dired-preview
+  :vc (:url "https://git.sr.ht/~protesilaos/dired-preview"
+            :branch "main")
+  :custom
+  (dired-preview-delay 0.1))
 
 ;;
 ;; vterm
