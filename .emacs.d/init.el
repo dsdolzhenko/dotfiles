@@ -276,6 +276,11 @@
                     :weight 'normal
                     :inherit '())
 
+(use-package company
+  :custom (company-idle-delay 0)
+  :bind (:map company-active-map
+              ("C-j" . company-complete-selection)))
+
 (use-package typescript-mode)
 
 ;; https://jblevins.org/projects/markdown-mode/
