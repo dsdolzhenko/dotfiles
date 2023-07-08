@@ -70,6 +70,15 @@
 ;; Use shift-{left,right,up,down} to move between windows
 (windmove-default-keybindings)
 
+(setq display-buffer-base-action
+      '((display-buffer-reuse-window
+         display-buffer-reuse-mode-window
+         display-buffer-same-window
+         display-buffer-in-previous-window)))
+
+(add-to-list 'display-buffer-alist
+             '("*Async Shell Command*" display-buffer-no-window (nil)))
+
 ;;
 ;; Packages
 ;;
