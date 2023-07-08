@@ -98,7 +98,8 @@
   (package-refresh-contents))
 
 ;; See the doc https://jwiegley.github.io/use-package/keywords/
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
 
 ;; Ensure that all other packages are installed
 (setq use-package-always-ensure t)
