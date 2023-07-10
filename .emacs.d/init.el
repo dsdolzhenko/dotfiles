@@ -77,7 +77,13 @@
          display-buffer-in-previous-window)))
 
 (add-to-list 'display-buffer-alist
-             '("*Async Shell Command*" display-buffer-no-window (nil)))
+             '("\\*Async Shell Command\\*"
+               display-buffer-no-window (nil)))
+
+(add-to-list 'display-buffer-alist
+             '("\\*Calendar\\*"
+               (display-buffer-below-selected display-buffer-at-bottom)
+               (inhibit-same-window . t)))
 
 ;;
 ;; Packages
